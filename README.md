@@ -10,14 +10,14 @@ Polycomb is a set of proteins that regulate gene expression, especially in the h
 
 ## Raw data
 You can find the data that was necessary for analysis in the `data` folder:
-- *[60591892-d938-4cdb-8545-3d84d5c16571.h5ad]* - Single-cell RNA sequencing data
-- *[polycomb_dots_hand_coords_update.tsv]*, *[Polycomb_proteins.csv]* - Tables of genes Polycomb proteins was connected with and the Polycomb genes info
+- `60591892-d938-4cdb-8545-3d84d5c16571.h5ad` - Single-cell RNA sequencing data, too large for GitHub, avaliable on [Human Brain Cell Atlas](https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443)
+- `polycomb_dots_hand_coords_update.tsv`, `Polycomb_proteins.csv` - Tables of genes Polycomb proteins was connected with and the Polycomb genes info
 - datasets for TFs
-- *[ncrna_genes.txt]* - List of ncRNA gene names
-- *[lncRNA_interaction.txt]*,*[miRNA_interaction.txt]*,*[snRNA_interaction.txt]* - ncRNA interactions datasets downloaded from NPInter v5.0 database
-- *[ncrna_targets_uniprot.txt]* - List of Uniprot KB IDs for target genes
-- *[ncrna_targets_enrichment_results.csv]* - Table of GO Enrichment analysis results for targets
-- *[ncrna_targets_id_conversion.txt]* - List of Ensemble IDs for Polycomb, ncRNA and target genes
+- `ncrna_genes.txt` - List of ncRNA gene names
+- `lncRNA_interaction.txt`,`miRNA_interaction.txt`,`snRNA_interaction.txt` - ncRNA interactions datasets, too large for GitHub, avaliable on [Google Drive](https://drive.google.com/drive/folders/1LXdX8x9EYX3MBPDHqZ87whL4-T9Ruhbc?usp=drive_link)
+- `ncrna_targets_uniprot.txt` - List of Uniprot KB IDs for target genes
+- `ncrna_targets_enrichment_results.csv` - Table of GO Enrichment analysis results for targets
+- `ncrna_targets_id_conversion.txt` - List of Ensemble IDs for Polycomb, ncRNA and target genes
 
 
 ## Content
@@ -34,7 +34,7 @@ You can find the following results in the `notebooks` folder:
 We extracted all gene names from `polycomb_dots_hand_coords_update.tsv` file. The HGNC database ([HUGO Gene Nomenclature Committee](https://www.genenames.org/)[^1]) was chosen to identify ncRNAs, as it was the most up-to-date and extensive at the time of the study. The corresponding identifiers for the original list of genes were found using the online tool [SynGo](https://www.syngoportal.org/convert)[^2]. In total, 396 genes out of the original 482 had corresponding identifiers. 98 out of 396 were classified as one of the non-coding RNA classes: 86 - long ncRNA, 11 - micro RNA, 1 - small nuclear RNA.
 
 2. **Targets searching**
-The ncRNA targets were searched using [GeneCaRNA](https://www.genecards.org/genecarna)[^3,4] and [NPInter v5.0](http://bigdata.ibp.ac.cn/npinter5)[^5] databases. GeneCaRNA database contained less information about interactions, so we decided to use the data from NPInter database. 662 unique targets were found. They formed 3109 different interactions with the studied non-coding RNAs in 262 tissues/cell lines. We explored functions and localization of targets due to GO Enrichment analysis performed with [goscripts package](https://github.com/pmoris/goscripts).
+The ncRNA targets were searched using [GeneCaRNA](https://www.genecards.org/genecarna)[^3],[^4] and [NPInter v5.0](http://bigdata.ibp.ac.cn/npinter5)[^5] databases. GeneCaRNA database contained less information about interactions, so we decided to use the data from NPInter database. 662 unique targets were found. They formed 3109 different interactions with the studied non-coding RNAs in 262 tissues/cell lines. We explored functions and localization of targets due to GO Enrichment analysis performed with [goscripts package](https://github.com/pmoris/goscripts).
 
 3. **Human Brain Cells data preprocessing**
 We used single-cell RNA sequencing of [Middle Temporal Gyrus dataset](https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443) downloaded from Human Brain Cell Atlas dataset v1.0[^6]. The data were filtered by neuron as a cell type and by genes of interest. Then it was preprocessed using scanpy[^7]. The data contained information about 405 of the genes of interest, after the filtration 377 genes and 85092 cells remained.
