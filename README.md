@@ -22,7 +22,7 @@ You can find the data that was necessary for analysis in the `data` folder:
 
 ## Content
 You can find the following results in the `notebooks` folder:
-- notebooks for TFs
+
 - *[03_ncRNA_analysis.ipynb](https://github.com/)*
 
 

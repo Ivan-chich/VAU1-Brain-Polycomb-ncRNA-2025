@@ -1,0 +1,384 @@
+/*@import url(http://quantbio.princeton.edu/styles.css);*/
+
+body {
+	background-color: #E5D9C0;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	text-decoration: none; 
+	color: black;
+	margin: 0;
+}
+
+a:link {
+	color: #993300;
+}
+
+a:visited {
+	color: #993300;
+}
+
+a#searchResultPageTitle:link {
+	color: black;
+	text-decoration: none;
+}
+
+a#searchResultPageTitle:visited {
+	color: black;
+	text-decoration: none;
+}
+
+p {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	text-decoration: none; 
+	color : black;
+}
+
+#topHeader {
+	width: 100%;
+}
+
+#puHeader {
+	border: 0;	
+/*
+	width: 189;
+*/
+	height: 21;
+	background-image: url(/images/puback.gif);
+}
+
+#puHeaderImg {
+	border: 0;
+	padding: 0;
+}
+
+#lsiHeader {
+	border: 0;
+/*
+	width: 599;
+*/
+	height: 32;
+	background-image: url(/images/lsiback.gif);
+	background-color: black;
+}
+
+#lsiHeaderImg {
+	border: 0;
+	padding: 6 0 0 8;
+}
+
+#loadJobBox {
+	border: 1px solid green;
+	padding: 10 10 10 10;
+	font-size: 14px;
+	color: black;
+	background-color: #ddc;
+}
+
+table.pageHeader {
+	border: 0;
+	padding: 0 0 0 0;
+}
+
+th {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	color : black;
+/*	text-align: left; */
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+td.pageHeader {
+	font-family : Times New Roman, Times, serif;
+	font-weight: Bold;
+	font-size : 30px;
+	color : #747e7c;
+/*	text-decoration: bold;  */
+	text-align: center;
+	vertical-align: middle;
+	padding: 0 0 0 0;
+}
+
+td {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	text-decoration: none; 
+	color : black;
+/*
+	text-align: left;
+*/
+	vertical-align: top;
+}
+
+td.navHeader {
+	background-color: #E5A880;
+	font-size : 14px;
+	font-weight: Bold;
+}
+
+pre {
+	font-family: monospace;
+}
+
+.header {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	text-decoration: none;
+	color : #993300;
+}
+
+.lineheader {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	text-decoration: none;
+	color : black;
+}
+
+.smallText {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	color : black;
+}
+
+.headlineText {
+	font-size : 13px;
+	font-weight : bold;
+	color : #993300;
+}
+
+.cvline {
+	font-family : Arial, Helvetica, sans-serif;
+	font-style : italic;
+	font-size : 19;
+	color : #006699;
+}
+
+.cvsubline {
+	font-family : Arial, Helvetica, sans-serif;
+	font-style : italic;
+	font-size : 14;
+	color : #006699;
+}
+
+.errorText {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 16px;
+	font-weight : bold;
+	text-decoration: none;
+	color : black;
+}
+
+#pageContent {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;	/* Set to 120px if the header is fixed */
+	margin-bottom: 10px;
+}
+
+#bannerContainer {
+	 width: 100%;
+	 margin: 0px auto;
+	 background-color: #ffe7d7;
+	 color: #000;
+	 height: 180px; 
+	 /*    These fix the header in place but the background goes too low
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 */
+ }
+
+
+#bannerLeft {
+	float: left;
+	width: 200px;
+	margin: 0;
+	padding: 0 0 0 0;
+}
+
+
+#bannerRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: auto;
+	float: right;
+	width: 100px;
+	margin: 0;
+	padding: 1em 1em 1em 1em;
+	font-size: 12px;
+/*	font-style: bold; */
+}
+
+#bannerLeft p, #bannerRight p {
+	margin: 0 0 0 0; 
+}
+
+#bannerCenter {
+	margin-left: 210px;
+	margin-right: 20px;
+	padding: 1em 1em 1em 1em;
+	max-width: 50em;
+	line-height: 1.5em;
+}
+#bannerCenter h2 { margin: 0 0 .5em 0; }
+
+#bannerBottom {
+	clear: both;
+	margin: 0;
+	padding: 0 0 0 0;
+	background-color: #ffdb9c;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+table.barContainer {
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	background-color: #efd7c7;
+	color: #000;
+	height: 10;
+}
+
+td.barContainer {
+	margin: 0px 0px 0px 0px;
+	padding: 0 0 0 0;
+}
+
+td.menuTree {
+	padding: 0 0 0 0;
+}
+
+#footer {
+	width: 100%;
+	margin: 0px auto;
+	position: fixed;
+	bottom: 0px;
+	background-color: #ffe7d7;
+	text-align: center;
+	color: #333;
+	border-top: 1px solid gray;
+	padding-top: 3px;
+	padding-bottom: 3px;
+} 
+
+#menuBody {
+        font-family: times;
+	font-size: 10;
+/*
+	color: #FF0000;
+	background-color: #ffe7d7;
+*/
+}
+
+#formBody
+{
+/*
+        font-family: times;
+	font-size: 6pt;
+	color: #FF0000;
+*/
+}
+
+.indent1 {
+	margin-left: 20px;
+}
+
+.note {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.warning {
+	color: orangered;
+	font-weight: bold;
+}
+
+.infoBox { font-size: 14; }
+
+.abstractBox {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10px;
+}
+
+.fakeLink {
+	color: blue;
+	text-decoration: underline;
+}
+
+.form_error {
+	color: red;
+	font-size: 12px;
+	background-color: yellow;
+}
+
+.input_error {
+	color: red;
+}
+
+.errorMsg {
+	color: red;
+	font-size: 12px;
+	background-color: yellow;
+}
+
+.warningMsg {
+	color: brown;
+	font-size: 12px;
+/*	background-color: yellow; */
+}
+
+table.paramsTable {
+	border-collapse: collapse;
+	border-color: grey;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	background: #ede6d6;
+}
+table.paramsTable tr {
+/*
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+*/
+}
+table.paramsTable td {
+/*
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 1px 0 0;
+*/
+	padding: 2px 5px 2px 5px;
+	white-space: nowrap;
+}
+
+
+table.annoFileTable {
+        border-collapse: collapse;
+}
+table.annoFileTable th {
+        text-align: center;
+        background: #993300;
+        color: white;
+        white-space: nowrap;
+        padding: 0 2px 0 2px;
+}
+table.annoFileTable th a:link {
+        color: white;
+}
+table.annoFileTable th a:visited {
+        color: white;
+}
+table.annoFileTable tr.evenRow {
+        background: #ffe4c4;
+}
+table.annoFileTable tr.oddRow {
+        background: #deb887;
+}
+table.annoFileTable td {
+        padding: 0 2px 0 2px;
+}
+
