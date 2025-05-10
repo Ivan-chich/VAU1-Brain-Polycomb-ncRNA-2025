@@ -23,31 +23,11 @@ You can find the data that was necessary for analysis in the `data` folder:
 ## Content
 You can find the following results in the `notebooks` folder:
 
-- notebook for TFs: *code/VennDiagrams.ipynb*
-- scripts for TFs: `code/GOtermsFinderFunction.py`, `code/union_intersection.py`
 - *[03_ncRNA_analysis.ipynb](https://github.com/)*
 
 
 ## Results
 ### TF
-
-1. **GO annotation with Generic GO Term Finder**.
-We extracted all gene names from polycomb_dots_hand_coords_update.tsv file.
-Next we visited https://go.princeton.edu/ and used *Generic GO Term Finder* tool
-Choose options: Ontology Aspects: Function; Choose annotation: GOA + HGNC Xrefs - H. sapiens (Human);
-Choose Your Output Format: HTML table + GO tree view images
-Save results in *GO_annotations/GO_term_finder* folder
-
-2. **GO annotation with Generic GO Term Mapper**.
-We used *Generic GO Term Mapper* tool in https://go.princeton.edu/.
-Choose options: Ontology Aspects: Function; Organism: Homo sapiens (GOA @EBI + Ensembl);
-Choose Your Output Format: HTML table
-Save results in *GO_annotations/GO_term_mapper* folder
-
-3. **Target genes**.
-GO annotation results were applied as input for `GOtermsFinderFunction.py` script to select GO terms *"DNA binding"* and
-*"Transcription factor activity"*. Resulting lists were applied in `tftarget.R` script. Regulated gene
-set was saved as `tf_targets.csv`
 
 ### ncRNA
 1. **Genes of interest selection**
