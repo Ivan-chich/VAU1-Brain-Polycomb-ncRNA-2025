@@ -25,6 +25,9 @@ You can find the following results in the `notebooks` folder:
 
 - *[03_ncRNA_analysis.ipynb](https://github.com/)*
 
+You can find the following results in the `code` folder:
+- *[correlation\_counts\_Alina.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/correletion_counts_Alina.ipynb)* – single-cell data preprocessing, CS-CORE coexpression matrix construction
+- *[project\_notebook\_Alina.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/project_notebook_Alina.ipynb)* – Polycomb target gene extraction, transcription factor/target identification, GO annotation
 
 ## Results
 
