@@ -39,10 +39,10 @@ We extracted all gene names from the `polycomb_dots_hand_coords_update.tsv` file
 The targets of transcription factors were obtained using the [tftargets](https://github.com/slowkow/tftargets) package. For the selected transcription factors, a total of 664 targets were identified. Gene Ontology (GO) annotation was performed for these targets, and the results can be found in the file: `images/GO_enrichment_TF_targets.png`.
 
 3. **Human Brain Cells data preprocessing**  
-We used single-cell RNA sequencing data from the [Middle Temporal Gyrus dataset](https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443), downloaded from the Human Brain Cell Atlas dataset v1.0\[^6]. Standard preprocessing of single-cell data was performed using **scanpy**\[^7]. All cell types were included in the subsequent analysis. We filtered the data based on genes of interest (Polycomb-Transcription Factors-targets), leaving 620 genes for further analysis.
+We used single-cell RNA sequencing data from the [Middle Temporal Gyrus dataset](https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443), downloaded from the Human Brain Cell Atlas dataset v1.0[^6]. Standard preprocessing of single-cell data was performed using **scanpy**[^7]. All cell types were included in the subsequent analysis. We filtered the data based on genes of interest (Polycomb-Transcription Factors-targets), leaving 620 genes for further analysis.
 
 4. **Coexpression analysis**  
-The expression data contained many zeros, so we decided to use the [CSCORE package](https://github.com/ChangSuBiostats/CS-CORE_python)\[^8] instead of classical correlation analysis. The resulting coexpression matrix can be found in the file: `images/coexpression_polycomb_TF_targets.pdf`.
+The expression data contained many zeros, so we decided to use the [CSCORE package](https://github.com/ChangSuBiostats/CS-CORE_python)[^8] instead of classical correlation analysis. The resulting coexpression matrix can be found in the file: `images/coexpression_polycomb_TF_targets.pdf`.
 
 ### ncRNA
 1. **Genes of interest selection**  
