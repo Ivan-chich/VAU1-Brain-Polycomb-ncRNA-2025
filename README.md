@@ -3,16 +3,18 @@
 ## Authors
 - **[Chicherin Ivan](https://github.com/Ivan-chich)**, Bioinformatics Institute (Saint-Petersburg)
 - **[Kulenich Victoria](https://github.com/vickulenich/)**, Bioinformatics Institute (Saint-Petersburg)
-- **[Nazarova Alina](https://github.com/)**, Bioinformatics Institute (Saint-Petersburg)
+- **[Nazarova Alina](https://github.com/privetttppoka)**, Bioinformatics Institute (Saint-Petersburg)
 
 ## Introduction
 Polycomb is a set of proteins that regulate gene expression, especially in the human brain. They form long-range DNA loops between genes, and those loops spread gene repression programs. However, many loops are formed not between genes, but between some non-coding RNAs. Maybe some of them are brain-specific and/or have interesting functions?
 
 ## Raw data
+
 You can find the data that was necessary for analysis in the `data` folder:
+
 - `60591892-d938-4cdb-8545-3d84d5c16571.h5ad` - Single-cell RNA sequencing data, too large for GitHub, avaliable on [Human Brain Cell Atlas](https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443)
 - `polycomb_dots_hand_coords_update.tsv`, `Polycomb_proteins.csv` - Tables of genes Polycomb proteins was connected with and the Polycomb genes info
-- datasets for TFs
+- Trancription factors datasets: [TRRUST](http://www.grnpedia.org/trrust/)[^9], [TRED](https://cb.utdallas.edu/cgi-bin/TRED/tred.cgi?process=home)[^10], [ENCODE](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRegTfbsClustered/)[^11]. Operated via `code/tftargets.R` script
 - `ncrna_genes.txt` - List of ncRNA gene names
 - `lncRNA_interaction.txt`,`miRNA_interaction.txt`,`snRNA_interaction.txt` - ncRNA interactions datasets, too large for GitHub, avaliable on [Google Drive](https://drive.google.com/drive/folders/1LXdX8x9EYX3MBPDHqZ87whL4-T9Ruhbc?usp=drive_link)
 - `ncrna_targets_uniprot.txt` - List of Uniprot KB IDs for target genes
@@ -21,13 +23,24 @@ You can find the data that was necessary for analysis in the `data` folder:
 
 
 ## Content
-You can find the following results in the `notebooks` folder:
 
-- *[03_ncRNA_analysis.ipynb](https://github.com/)*
+#### Code folder:
 
-You can find the following results in the `code` folder:
+- *[03_ncRNA_analysis.ipynb](https://github.com/)* analysis of ncRNAs
 - *[correlation\_counts\_Alina.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/correletion_counts_Alina.ipynb)* – single-cell data preprocessing, CS-CORE coexpression matrix construction
 - *[project\_notebook\_Alina.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/project_notebook_Alina.ipynb)* – Polycomb target gene extraction, transcription factor/target identification, GO annotation
+- **`CS_CORE_PcG.ipynb`**: Polycomb genes coexpression, UMAPS and t-SNE done by Ivan Chicherin
+- **`go_enrichment.R`**: R sctipt for GO terms enrichment
+- **`GOtermsFinderFunction.py`**: script for filtration of GO annotation uotput based on selected terms
+- **`parce_tsv.py`**: script for extraction of gene set from the dataset containing annotated chromosome long-range contacts
+- **`tftargets.R`, `tftargets.rda`, `tftargets.RData`**: TFTARGET script and supplementary files for finding target genes regulated by transcription factors
+- **`union_intersection.py`, `VennDiagrams.ipynb`**: scripts for building unions and intersections between gene sets found by two researchers (in this work: Ivan and Alina)
+
+#### GO_annotations folder:
+
+- The outputs for GO terms analysis of the target genes regulated by Polycomb-controlled transcription factors.
+- The output is divided between two folders for `GO_term_finder` and `GO-term_mapper` tools
+- in each tool output contains `Function`, `Pathway` and `Subcellular localization` terms
 
 ## Results
 
@@ -55,10 +68,10 @@ The ncRNA targets were searched using [GeneCaRNA](https://www.genecards.org/gene
 We used single-cell RNA sequencing of [Middle Temporal Gyrus dataset](https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443) downloaded from Human Brain Cell Atlas dataset v1.0[^6]. The data were filtered by neuron as a cell type and by genes of interest. Then it was preprocessed using scanpy[^7]. The data contained information about 405 of the genes of interest, after the filtration 377 genes and 85092 cells remained.
 
 4. **Coexpression analysis**  
-Expression data contained lots of zeros so we decided to use [CSCORE package](https://github.com/ChangSuBiostats/CS-CORE_python)[^8] instead of classic correlation analysis. To prevent versions conflict we made changes in the `CSCORE_IRLS.py` script (`np.inf` instead of `np.Inf`).
+Expression data contained lots of zeros so we decided to use [CSCORE package](https://github.com/ChangSuBiostats/CS-CORE_python)[^8] instead of classic correlation analysis. To prevent versions conflict we made changes in the `CSCORE_IRLS.py` script (`np.inf` instead of `np.Inf`). The resulting coexpression matrix can be found in the file: images/coexpression.pdf
 
 ## Conclusion
-We can see ... (TFs). Also we can see that a number of non-coding RNA genes can be characterized by high co-expression with both Polycomb protein genes and target genes. We can conclude that the regulation of processes in the human brain is a much more complex process than we previously assumed. But using the obtained data it is possible to do further deeper functional analysis.
+Polycomb genes provide two-leveled mechanism of transcriptional control. The first level is composed of primary targets: transcription factors and ncRNAs. The second level involves secondary target genes directly regulated by primary targets. PcG genes, their primary (transcription factors) and secondary target genes have non-uniform coexpression pattern, which demonstrates discrete clusters of high positive and negative values. Also we can see that a number of non-coding RNA genes can be characterized by high co-expression with both Polycomb protein genes and target genes. We can conclude that the regulation of processes in the human brain is a much more complex process than we previously assumed. But using the obtained data it is possible to do further deeper functional analysis.
 
 ## Dependencies
 This project was implemented using Windows 10 x64 and Ubuntu 22.04.2 LTS. The code was developed utilizing Python 3.12.0 (VSCode) and R 4.3.3 (RStudio). External libraries are utilized, so please upload the requirements.txt file to your virtual environment.
@@ -72,3 +85,6 @@ This project was implemented using Windows 10 x64 and Ubuntu 22.04.2 LTS. The co
 [^6]: Kimberly Siletti et al., Transcriptomic diversity of cell types across the adult human brain. Science382, eadd7046(2023). DOI: 10.1126/science.add7046
 [^7]: Wolf, F., Angerer, P. & Theis, F. SCANPY: large-scale single-cell gene expression data analysis. Genome Biol 19, 15 (2018). https://doi.org/10.1186/s13059-017-1382-0
 [^8]: Su, C., Xu, Z., Shan, X. et al. Cell-type-specific co-expression inference from single cell RNA-sequencing data. Nat Commun 14, 4846 (2023). https://doi.org/10.1038/s41467-023-40503-7
+[^9]: Han, H., Shim, H., Shin, D., Shim, J. E., Ko, Y., Shin, J., Kim, H., Cho, A., Kim, E., Lee, T., Kim, H., Kim, K., Yang, S., Bae, D., Yun, A., Kim, S., Kim, C. Y., Cho, H. J., Kang, B., Shin, S., … Lee, I. (2015). TRRUST: a reference database of human transcriptional regulatory interactions. Scientific reports, 5, 11432. https://doi.org/10.1038/srep11432
+[^10]: Jiang, C., Xuan, Z., Zhao, F., & Zhang, M. Q. (2007). TRED: a transcriptional regulatory element database, new entries and other development. Nucleic acids research, 35(Database issue), D137–D140. https://doi.org/10.1093/nar/gkl1041
+[^11]: ENCODE Project Consortium (2012). An integrated encyclopedia of DNA elements in the human genome. Nature, 489(7414), 57–74. https://doi.org/10.1038/nature11247
