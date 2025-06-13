@@ -27,8 +27,8 @@ You can find the data that was necessary for analysis in the `data` folder:
 #### Code folder:
 
 - *[03_ncRNA_analysis.ipynb](https://github.com/)* analysis of ncRNAs
-- *[correlation\_counts\_Alina.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/correletion_counts_Alina.ipynb)* – single-cell data preprocessing, CS-CORE coexpression matrix construction
-- *[project\_notebook\_Alina.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/project_notebook_Alina.ipynb)* – Polycomb target gene extraction, transcription factor/target identification, GO annotation
+- *[correletion_counts.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/correletion_counts.ipynb)* – single-cell data preprocessing, CS-CORE coexpression matrix construction
+- *[tf_targets_search.ipynb](https://github.com/privetttppoka/VAU1-Brain-Polycomb-ncRNA-2025/blob/Alina/code/tf_targets_search.ipynb)* – Polycomb target gene extraction, transcription factor/target identification, GO annotation
 - **`CS_CORE_PcG.ipynb`**: Polycomb genes coexpression, UMAPS and t-SNE done by Ivan Chicherin
 - **`go_enrichment.R`**: R sctipt for GO terms enrichment
 - **`GOtermsFinderFunction.py`**: script for filtration of GO annotation uotput based on selected terms
